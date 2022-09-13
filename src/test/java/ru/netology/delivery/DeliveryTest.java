@@ -48,6 +48,6 @@ public class DeliveryTest {
         $x("//*[contains(text(),'Запланировать')]").click();
         Thread.sleep(2*1000);
         $x("//span[contains(text(),'Перепланировать')]").click();
-        $(".notification__content").shouldHave(text("Встреча успешно запланирована наа " + secondMeetingDate));
+        $(".notification__content").shouldHave(text("Встреча успешно запланирована на " + secondMeetingDate));
     }
 }

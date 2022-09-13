@@ -36,7 +36,7 @@ public class DeliveryTest {
         $("[data-test-id='phone'] input").setValue(validUser.getPhone());
         $("[data-test-id='agreement']").click();
         $x("//*[contains(text(),'Запланировать')]").click();
-        $(".notification__content").shouldBe(visible).shouldHave(text("Встреча успешно запланирована нааа " + firstMeetingDate));
+        $(".notification__content").shouldBe(visible).shouldHave(text("Встреча успешно запланирована на " + firstMeetingDate));
         Thread.sleep(2*1000);
         $("[data-test-id=date] input").doubleClick().sendKeys(Keys.DELETE, firstMeetingDate);
         $x("//*[contains(text(),'Запланировать')]").click();

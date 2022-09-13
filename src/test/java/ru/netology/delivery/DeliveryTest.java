@@ -9,7 +9,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import ru.netology.delivery.DataGenerator;
 
-import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
@@ -40,13 +39,13 @@ public class DeliveryTest {
         Thread.sleep(2*1000);
         $("[data-test-id=date] input").doubleClick().sendKeys(Keys.DELETE, firstMeetingDate);
         $x("//*[contains(text(),'Запланировать')]").click();
-        Thread.sleep(2*1000);
+        Thread.sleep(3*1000);
         $x("//span[contains(text(),'Перепланировать')]").click();
         $(".notification__content").shouldHave(text("Встреча успешно запланирована на " + firstMeetingDate));
         Thread.sleep(2*1000);
         $("[data-test-id=date] input").doubleClick().sendKeys(Keys.DELETE, secondMeetingDate);
         $x("//*[contains(text(),'Запланировать')]").click();
-        Thread.sleep(2*1000);
+        Thread.sleep(3*1000);
         $x("//span[contains(text(),'Перепланировать')]").click();
         $(".notification__content").shouldHave(text("Встреча успешно запланирована на " + secondMeetingDate));
     }

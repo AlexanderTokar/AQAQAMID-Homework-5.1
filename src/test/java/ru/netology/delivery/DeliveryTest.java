@@ -36,17 +36,16 @@ public class DeliveryTest {
         $("[data-test-id='agreement']").click();
         $x("//*[contains(text(),'Запланировать')]").click();
         $(".notification__content").shouldBe(visible).shouldHave(text("Встреча успешно запланирована на " + firstMeetingDate));
-        Thread.sleep(2*1000);
+        Thread.sleep(1*1000);
         $("[data-test-id=date] input").doubleClick().sendKeys(Keys.DELETE, firstMeetingDate);
         $x("//*[contains(text(),'Запланировать')]").click();
-        Thread.sleep(3*1000);
         $x("//span[contains(text(),'Перепланировать')]").click();
         $(".notification__content").shouldHave(text("Встреча успешно запланирована на " + firstMeetingDate));
-        Thread.sleep(2*1000);
+        Thread.sleep(1*1000);
         $("[data-test-id=date] input").doubleClick().sendKeys(Keys.DELETE, secondMeetingDate);
         $x("//*[contains(text(),'Запланировать')]").click();
-        Thread.sleep(3*1000);
-        $x("//span[contains(text(),'Перепланировать')]").click();
+        $x("//span[contains(text(),'Перепланировать')]").click();;
+        Thread.sleep(1*1000);
         $(".notification__content").shouldHave(text("Встреча успешно запланирована на " + secondMeetingDate));
     }
 }
